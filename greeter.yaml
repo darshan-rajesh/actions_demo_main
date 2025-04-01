@@ -1,0 +1,10 @@
+name: Greeter Action
+on: [push]
+jobs:
+  greet:
+    runs-out: ubuntu-latest
+    steps:
+      - name: print hello
+      run: echo "Hello"
+      - name: Step 2
+      run: echo"This is step 2"

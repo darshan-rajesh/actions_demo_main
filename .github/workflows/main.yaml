@@ -1,0 +1,20 @@
+name: Test all python files
+on: [push]
+jobs: 
+  test-python:
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Checkout Code
+      users: actions/checkout@v3
+
+    - name: Set up python
+      users: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Run all .py files
+      run: 
+        for files in $(find . - name "*.py"); do
+          echo "Running $file"
+          python "$file"
+          done
+      
